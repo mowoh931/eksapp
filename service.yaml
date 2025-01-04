@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eksapp-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: eksapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
