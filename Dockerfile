@@ -6,11 +6,11 @@ WORKDIR /app
 
 # Copy the pom.xml and download dependencies
 COPY pom.xml .
-RUN mvn dependency:go-offline
+RUN mvn -B -q dependency:go-offline
 
 # Copy the source code and build the application
 COPY src ./src
-RUN mvn clean package -DskipTests
+RUN mvn -B -q package -DskipTests
 
 # Stage 2: Create the runtime image
 FROM amazoncorretto:17-alpine
