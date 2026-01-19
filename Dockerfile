@@ -22,10 +22,10 @@ LABEL maintainer="mowoh"
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/* app.jar
+COPY --from=build /app/target/eks-app.jar /app/app.jar
 
 # Expose the port the application runs on
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
