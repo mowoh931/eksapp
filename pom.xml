@@ -109,7 +109,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>eksapp</finalName>
+        <finalName>eks-app</finalName>
     </build>
 
 
